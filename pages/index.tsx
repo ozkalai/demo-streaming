@@ -1,6 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '@/styles/Home.module.scss'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "@/styles/Home.module.scss";
+import { TextButton } from "@/components/TextButton";
 
 const Home: NextPage = () => {
   return (
@@ -11,11 +12,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/streaming.png" />
       </Head>
 
-      <main className={styles.main}>
-        context goes here
-      </main>
+      <main className={styles.main}></main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
