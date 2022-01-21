@@ -27,7 +27,9 @@ export const Footer: React.FC = (): JSX.Element => {
             <span>|</span>
             <Link href="/">Manage Account</Link>
           </div>
-          <div>Copyright © 2016 DEMO Streaming. All Rights Reserved.</div>
+          <div className={styles.copyright}>
+            Copyright © 2016 DEMO Streaming. All Rights Reserved.
+          </div>
         </div>
         <div className={styles.footerButtons}>
           <div className={styles.footerButtonsSocial}>
