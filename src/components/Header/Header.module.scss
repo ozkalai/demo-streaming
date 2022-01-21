@@ -1,23 +1,23 @@
 .header {
   &Main {
-    @apply bg-blue shadow-[0_3px_10px_0_rgba(0,0,0,1)];
+    @apply bg-blue shadow-[0_3px_10px_0_rgba(0,0,0,1)] h-[30px] md:h-[61px] flex items-center;
 
     &Content {
-      @apply w-4/5 mx-auto flex justify-between pt-8 pb-4;
+      @apply w-4/5 mx-auto flex justify-between;
 
       &Name {
-        @apply text-3xl text-white;
+        @apply text-[12px] md:text-2xl text-white;
       }
       &Buttons {
-        @apply flex gap-5;
+        @apply flex gap-2 md:gap-5;
       }
     }
   }
   &Title {
-    @apply bg-gray shadow-[0_3px_10px_0_rgba(0,0,0,1)];
+    @apply bg-gray h-[28px] md:h-[59px] flex items-end shadow-[0_3px_10px_0_rgba(0,0,0,1)];
 
     &Content {
-      @apply w-4/5 mx-auto text-white text-2xl pt-6 pb-3;
+      @apply w-4/5 mx-auto text-white text-[12px] md:text-xl md:pt-4 md:pb-2;
     }
   }
 }
