@@ -1,12 +1,21 @@
 import { render, screen } from "@testing-library/react";
+
 import { Footer } from ".";
 
-describe("test demo", () => {
-  test("test", () => {
+describe("Footer", () => {
+  test("it render links ", () => {
     render(<Footer />);
 
-    const footerText = screen.getByText("Footer");
+    const links = screen.getAllByRole("link");
 
-    expect(footerText).toBeTruthy();
+    expect(links.length).toEqual(6);
+  });
+
+  test("it render Images ", () => {
+    render(<Footer />);
+
+    const images = screen.getAllByText("Next image stub");
+
+    expect(images.length).toEqual(6);
   });
 });
