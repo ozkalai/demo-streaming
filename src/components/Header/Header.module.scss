@@ -1,3 +1,23 @@
 .header {
-  @apply bg-blue;
+  &Main {
+    @apply bg-blue shadow-[0_3px_10px_0_rgba(0,0,0,1)];
+
+    &Content {
+      @apply w-4/5 mx-auto flex justify-between pt-8 pb-4;
+
+      &Name {
+        @apply text-3xl text-white;
+      }
+      &Buttons {
+        @apply flex gap-5;
+      }
+    }
+  }
+  &Title {
+    @apply bg-gray shadow-[0_3px_10px_0_rgba(0,0,0,1)];
+
+    &Content {
+      @apply w-4/5 mx-auto text-white text-2xl pt-6 pb-3;
+    }
+  }
 }
