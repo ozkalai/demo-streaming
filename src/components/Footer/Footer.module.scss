@@ -1,37 +1,39 @@
 .footer {
   @apply bg-black w-4/5 mx-auto absolute bottom-0 w-full text-lightGray;
-}
 
-.wrapper {
-  @apply w-4/5 flex gap-9 flex-col mx-auto my-4 sm:my-[48px];
-}
-
-.us {
-  @apply flex flex-row justify-between items-center;
-}
-
-.nav {
-  @apply flex flex-col gap-5 text-lightGray text-sm;
-}
-
-.links {
-  @apply flex gap-4;
-}
-
-.social {
-  button {
-    @apply w-[30px] h-[30px] relative;
+  &Wrapper {
+    @apply w-4/5 flex gap-9 flex-col mx-auto my-4 sm:my-[48px];
   }
-  @apply flex flex-row gap-5;
-}
 
-.store {
-  button {
-    @apply flex h-[40px] w-[135px] relative items-start;
+  &Navigation {
+    @apply flex flex-col gap-5 text-lightGray text-sm;
+
+    &Links {
+      @apply flex gap-4;
+    }
   }
-  @apply flex;
-}
 
-.ml {
-  @apply ml-5 mr-2;
+  &Buttons {
+    @apply flex flex-row justify-between items-center;
+
+    &Social {
+      @apply flex flex-row gap-5;
+
+      button {
+        @apply w-[30px] h-[30px] relative;
+      }
+    }
+
+    &Store {
+      @apply flex;
+
+      button {
+        @apply flex h-[40px] w-[135px] relative items-start;
+      }
+
+      .ml {
+        @apply ml-5 mr-2;
+      }
+    }
+  }
 }

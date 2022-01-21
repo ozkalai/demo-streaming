@@ -11,10 +11,10 @@ import instagram from "@/assets/instagram-white.svg";
 
 export const Footer: React.FC = (): JSX.Element => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.wrapper}>
-        <div className={styles.nav}>
-          <div className={styles.links}>
+    <footer data-testid="footer-test-id" className={styles.footer}>
+      <div className={styles.footerWrapper}>
+        <div className={styles.footerNavigation}>
+          <div className={styles.footerNavigationLinks}>
             <Link href="/">Home</Link>
             <span>|</span>
             <Link href="/">Terms and Conditions</Link>
@@ -29,8 +29,8 @@ export const Footer: React.FC = (): JSX.Element => {
           </div>
           <div>Copyright © 2016 DEMO Streaming. All Rights Reserved.</div>
         </div>
-        <div className={styles.us}>
-          <div className={styles.social}>
+        <div className={styles.footerButtons}>
+          <div className={styles.footerButtonsSocial}>
             <button>
               <Image src={facebook} layout="fill" alt="Facebook" />
             </button>
@@ -41,7 +41,7 @@ export const Footer: React.FC = (): JSX.Element => {
               <Image src={instagram} layout="fill" alt="Instagram" />
             </button>
           </div>
-          <div className={styles.store}>
+          <div className={styles.footerButtonsStore}>
             <button>
               <Image
                 className="mr-5"
