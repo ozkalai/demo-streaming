@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 
 import { Content } from "@/components/Content";
 
-const Movies: NextPage = () => {
+const Movies = () => {
   const { isLoading, error, data } = useQuery("repoData", () =>
     fetch("./sample.json").then((res) => res.json())
   );
