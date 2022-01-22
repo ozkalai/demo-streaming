@@ -1,0 +1,15 @@
+.wrapper {
+  @apply flex flex-col gap-4;
+}
+
+.card {
+  @apply w-[137px] h-[204px] flex justify-center items-center bg-gradient-to-r from-black to-black relative cursor-pointer overflow-hidden;
+
+  &Image {
+    @apply w-[120px] mr-36 mb-2;
+  }
+
+  &Type {
+    @apply absolute text-white text-2xl;
+  }
+}
