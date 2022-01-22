@@ -26,7 +26,7 @@ const Movies = () => {
       <Content>
         <main className="overflow-hidden">
           <ul>
-            {data.entries.map((i) => (
+            {data.entries.map((i: any) => (
               <li key={i.id}>{i.title}</li>
             ))}
           </ul>
