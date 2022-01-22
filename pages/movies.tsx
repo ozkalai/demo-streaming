@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { Content } from "@/components/Content";
+
 const Movies: NextPage = () => {
   return (
     <div>
@@ -10,7 +12,9 @@ const Movies: NextPage = () => {
         <link rel="icon" href="/streaming.png" />
       </Head>
 
-      <main>Movie</main>
+      <Content>
+        <main>Movie</main>
+      </Content>
     </div>
   );
 };

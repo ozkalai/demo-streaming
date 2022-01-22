@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
+import { Content } from "@/components/Content";
+
 const Series: NextPage = () => {
   return (
     <div>
@@ -10,7 +12,9 @@ const Series: NextPage = () => {
         <link rel="icon" href="/streaming.png" />
       </Head>
 
-      <main>Series</main>
+      <Content>
+        <main>Series</main>
+      </Content>
     </div>
   );
 };
