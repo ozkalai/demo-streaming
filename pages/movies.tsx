@@ -1,9 +1,20 @@
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useQuery } from "react-query";
 
 import { Content } from "@/components/Content";
 
 const Movies: NextPage = () => {
+  const { isLoading, error, data } = useQuery("repoData", () =>
+    fetch("./sample.json").then((res) => res.json())
+  );
+
+  console.log(data);
+
+  if (isLoading) return "Loading...";
+
+  if (error) return "Oops, something went wrong ";
+
   return (
     <div>
       <Head>
@@ -13,7 +24,13 @@ const Movies: NextPage = () => {
       </Head>
 
       <Content>
-        <main>Movie</main>
+        <main className="overflow-hidden">
+          <ul>
+            {data.entries.map((i) => (
+              <li key={i.id}>{i.title}</li>
+            ))}
+          </ul>
+        </main>
       </Content>
     </div>
   );
