@@ -30,7 +30,7 @@ export const Header: React.FC = (): JSX.Element => {
   }, []);
 
   return (
-    <div data-test-id="header-test" className={styles.header}>
+    <header data-test-id="header-test" className={styles.header}>
       <div className={styles.headerMain}>
         <div className={styles.headerMainContent}>
           <h1 className={styles.headerMainContentName}>DEMO Streaming</h1>
@@ -49,6 +49,6 @@ export const Header: React.FC = (): JSX.Element => {
       <div className={styles.headerTitle}>
         <div className={styles.headerTitleContent}>{headerTitle}</div>
       </div>
-    </div>
+    </header>
   );
 };
