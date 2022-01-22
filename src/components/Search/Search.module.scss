@@ -1,0 +1,12 @@
+.search {
+  @apply flex justify-center items-center w-full h-[37px] bg-white shadow-2xl;
+  &Input {
+    input {
+      @apply focus:outline-none w-full;
+    }
+    @apply w-full;
+  }
+  &Button {
+    @apply h-full bg-blue w-16 flex justify-center items-center text-white;
+  }
+}
