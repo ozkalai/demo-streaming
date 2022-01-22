@@ -1,0 +1,7 @@
+.programCard {
+  @apply w-[134px] flex flex-col gap-2;
+
+  &Image {
+    @apply w-full h-[201px] relative;
+  }
+}
