@@ -1,0 +1,29 @@
+.dropdown {
+  @apply w-full h-[37px] relative;
+
+  &Header {
+    @apply p-2 flex justify-between items-center cursor-pointer shadow-xl;
+
+    &Title {
+    }
+
+    &Icon {
+      @apply self-start pb-2 text-blue text-2xl;
+    }
+  }
+
+  &List {
+    @apply absolute w-full bg-white z-10;
+
+    button {
+      @apply px-2;
+    }
+
+    &Item {
+      @apply h-[37px] flex items-center  hover:bg-blue hover:text-white;
+      button {
+        @apply px-2;
+      }
+    }
+  }
+}
