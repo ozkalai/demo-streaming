@@ -6,10 +6,10 @@
   }
 
   &Navigation {
-    @apply flex flex-col gap-2 md:gap-5 text-lightGray text-[12px] md:text-sm;
+    @apply flex flex-col justify-center items-center md:justify-start md:items-start gap-2 md:gap-5 text-lightGray text-[12px] md:text-sm;
 
     &Links {
-      @apply flex flex-wrap gap-2 md:gap-4;
+      @apply flex flex-wrap justify-center sm:justify-start gap-2 md:gap-4;
     }
 
     .copyright {
