@@ -2,7 +2,7 @@
   @apply bg-black w-4/5 mx-auto bottom-0 w-full text-lightGray h-[201px];
 
   &Wrapper {
-    @apply w-4/5 flex gap-9 flex-col mx-auto p-8;
+    @apply w-4/5 flex justify-center gap-5 lg:gap-9 flex-col mx-auto p-8;
   }
 
   &Navigation {
@@ -24,7 +24,7 @@
       @apply flex flex-row gap-2 lg:gap-5;
 
       button {
-        @apply w-[14px] h-[14px] lg:w-[30px] lg:h-[30px] relative;
+        @apply w-[10px] h-[10px] sm:w-[14px] sm:h-[14px] lg:w-[30px] lg:h-[30px] relative;
       }
     }
 
@@ -32,7 +32,7 @@
       @apply flex;
 
       button {
-        @apply flex h-[16px] w-[54px] lg:h-[40px] lg:w-[135px] relative items-start;
+        @apply flex h-[12px] w-[40px] sm:h-[16px] sm:w-[54px] lg:h-[40px] lg:w-[135px] relative items-start;
       }
 
       .ml {

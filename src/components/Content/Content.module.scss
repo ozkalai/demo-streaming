@@ -2,11 +2,11 @@
   overflow: scroll;
   min-height: calc(100vh - 321px);
 
-  @apply w-4/5 mx-auto py-10;
+  @apply w-4/5 mx-auto py-4 lg:py-10;
 }
 
 @media only screen and (max-width: 768px) {
   .content {
-    min-height: calc(100vh - 253px);
+    min-height: calc(100vh - 259px);
   }
 }
