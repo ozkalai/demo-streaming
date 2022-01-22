@@ -1,19 +1,19 @@
 .footer {
-  @apply bg-black w-4/5 mx-auto absolute bottom-0 w-full text-lightGray;
+  @apply bg-black w-4/5 mx-auto bottom-0 w-full text-lightGray h-[201px];
 
   &Wrapper {
-    @apply w-4/5 flex gap-9 flex-col mx-auto my-4 sm:my-[48px];
+    @apply w-4/5 flex gap-9 flex-col mx-auto p-8;
   }
 
   &Navigation {
-    @apply flex flex-col justify-center items-center md:justify-start md:items-start gap-2 md:gap-5 text-lightGray text-[12px] md:text-sm;
+    @apply flex flex-col justify-center items-center lg:justify-start lg:items-start gap-2 lg:gap-5 text-lightGray text-[12px] lg:text-sm;
 
     &Links {
-      @apply flex flex-wrap justify-center sm:justify-start gap-2 md:gap-4;
+      @apply flex flex-wrap justify-center sm:justify-start gap-2 lg:gap-4;
     }
 
     .copyright {
-      @apply text-[8px] md:text-sm;
+      @apply text-[8px] lg:text-sm;
     }
   }
 
@@ -21,10 +21,10 @@
     @apply flex flex-row justify-between items-center;
 
     &Social {
-      @apply flex flex-row gap-2 md:gap-5;
+      @apply flex flex-row gap-2 lg:gap-5;
 
       button {
-        @apply w-[14px] h-[14px] md:w-[30px] md:h-[30px] relative;
+        @apply w-[14px] h-[14px] lg:w-[30px] lg:h-[30px] relative;
       }
     }
 
@@ -32,11 +32,11 @@
       @apply flex;
 
       button {
-        @apply flex h-[16px] w-[54px] md:h-[40px] md:w-[135px] relative items-start;
+        @apply flex h-[16px] w-[54px] lg:h-[40px] lg:w-[135px] relative items-start;
       }
 
       .ml {
-        @apply ml-2 mr-1 md:ml-5 md:mr-2;
+        @apply ml-2 mr-1 lg:ml-5 lg:mr-2;
       }
     }
   }

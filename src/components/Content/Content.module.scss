@@ -1,3 +1,12 @@
 .content {
-  @apply w-4/5 mx-auto my-10;
+  overflow: scroll;
+  min-height: calc(100vh - 321px);
+
+  @apply w-4/5 mx-auto py-10;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    min-height: calc(100vh - 253px);
+  }
 }
