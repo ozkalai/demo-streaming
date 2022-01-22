@@ -11,10 +11,6 @@ const Movies = () => {
 
   console.log(data);
 
-  if (isLoading) return "Loading...";
-
-  if (error) return "Oops, something went wrong ";
-
   return (
     <div>
       <Head>
@@ -25,11 +21,16 @@ const Movies = () => {
 
       <Content>
         <main className="overflow-hidden">
-          <ul>
-            {data.entries.map((i: any) => (
-              <li key={i.id}>{i.title}</li>
-            ))}
-          </ul>
+          {error ? "Oops, something went wrong" : ""}
+          {isLoading ? (
+            "Loading"
+          ) : (
+            <ul>
+              {data.entries.map((i: any) => (
+                <li key={i.id}>{i.title}</li>
+              ))}
+            </ul>
+          )}
         </main>
       </Content>
     </div>
