@@ -14,12 +14,6 @@ const queryClient = new QueryClient();
 function MyApp({ Component, pageProps }: AppProps) {
   const { pathname, push } = useRouter();
 
-  useEffect(() => {
-    if (pathname === "/_error") {
-      push("/error");
-    }
-  }, [pathname, push]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Head>
