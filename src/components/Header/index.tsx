@@ -27,7 +27,7 @@ export const Header: React.FC = (): JSX.Element => {
 
   useEffect(() => {
     setHeaderTitle(getHeaderTitle(pathname));
-  }, []);
+  }, [pathname]);
 
   return (
     <header data-test-id="header-test" className={styles.header}>
