@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     if (pathname === "/_error") {
       push("/error");
     }
-  }, [pathname]);
+  }, [pathname, push]);
 
   return (
     <QueryClientProvider client={queryClient}>
