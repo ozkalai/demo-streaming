@@ -10,8 +10,6 @@ export const Dropdown: React.FC<IDropdownProps> = ({
   const [headerTitle, setHeaderTitle] = useState("Sort By");
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log("optionList", optionsList);
-
   return (
     <div className={styles.dropdown}>
       <div
