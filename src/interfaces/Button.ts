@@ -1,4 +1,4 @@
 export interface IButtonProps {
-    className?: string
-    text: string
+  className?: string;
+  text: string;
 }

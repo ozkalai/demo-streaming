@@ -1,14 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { Button } from "@/components/Button";
+
+import { Button } from "@/components";
 
 describe("Button", () => {
   test("it render", () => {
-    render(
-      <Button
-        className="p-2 bg-black text-white"
-        text="Start your free trial"
-      />
-    );
+    render(<Button className="p-2 bg-black text-white" text="Start your free trial" />);
 
     const button = screen.getByText("Start your free trial");
 
@@ -16,12 +12,7 @@ describe("Button", () => {
   });
 
   test("it render with classNames", () => {
-    render(
-      <Button
-        className="p-2 bg-black text-white"
-        text="Start your free trial"
-      />
-    );
+    render(<Button className="p-2 bg-black text-white" text="Start your free trial" />);
 
     const button = screen.getByText("Start your free trial");
 

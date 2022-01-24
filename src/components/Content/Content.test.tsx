@@ -7,7 +7,7 @@ describe("Content", () => {
     render(
       <Content>
         <div>children</div>
-      </Content>
+      </Content>,
     );
 
     const children = screen.getByText("children");

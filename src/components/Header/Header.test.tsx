@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { createMockRouter } from "../../../__mocks__/createMockRouter";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 
-import { Header } from "@/components/Header";
+import { Header } from "@/components";
 
 describe("Header", () => {
   test("it render header title", () => {

@@ -1,5 +1,5 @@
 import { IProgramListProps } from "@/interfaces/ProgramListProps";
-import { ProgramCard } from "../ProgramCard";
+import { ProgramCard } from "@/components";
 import styles from "./ProgramList.module.scss";
 
 export const ProgramList: React.FC<IProgramListProps> = ({ data }): JSX.Element => {

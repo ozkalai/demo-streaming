@@ -2,13 +2,10 @@ import type { GetServerSideProps, NextPage } from "next";
 import { useState } from "react";
 import { useQuery } from "react-query";
 
-import { Content } from "@/components/Content";
-import { Search } from "@/components/Search";
-import { Dropdown } from "@/components/Dropdown";
+import { Content, Search, Dropdown, ProgramList } from "@/components";
 import { IProgramData } from "@/interfaces/ProgramData";
+import { optionList } from "@/constants/optionList";
 import styles from "@/styles/pages/Type.module.scss";
-import { ProgramList } from "@/components/ProgramList";
-import { optionList } from "src/constants/optionList";
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const queryType = ctx.query.type;

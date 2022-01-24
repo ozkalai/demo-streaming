@@ -1,5 +1,5 @@
-import {IProgramData} from "./ProgramData"
+import { IProgramData } from "./ProgramData";
 
 export interface IProgramCard {
-    programData: IProgramData
+  programData: IProgramData;
 }

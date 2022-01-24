@@ -1,4 +1,4 @@
 export interface IPopularTitleCardProps {
-    type: "Movies" | "Series"
-    onClick: () => void
+  type: "Movies" | "Series";
+  onClick: () => void;
 }

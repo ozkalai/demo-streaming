@@ -1,10 +1,7 @@
 import { useRouter } from "next/router";
 
-import { Button } from "@/components/Button";
-import { TextButton } from "@/components/TextButton";
-
+import { Button, TextButton } from "@/components";
 import styles from "./Header.module.scss";
-import { useEffect, useState } from "react";
 
 export const Header: React.FC = (): JSX.Element => {
   const { asPath } = useRouter();

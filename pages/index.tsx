@@ -1,10 +1,8 @@
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 import styles from "@/styles/pages/Home.module.scss";
-import { PopularTitleCard } from "@/components/PopularTitleCard";
-import { Content } from "@/components/Content";
+import { PopularTitleCard, Content } from "@/components";
 
 const Home: NextPage = () => {
   const router = useRouter();

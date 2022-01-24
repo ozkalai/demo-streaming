@@ -1,4 +1,4 @@
-import { Content } from "@/components/Content";
+import { Content } from "@/components";
 
 export default function Custom404() {
   return (
