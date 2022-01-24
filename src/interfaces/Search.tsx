@@ -1,3 +1,3 @@
 export interface ISearchProps {
-  onClick: () => void;
+  onClick: (value: string) => void;
 }
