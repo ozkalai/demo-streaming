@@ -7,12 +7,10 @@ import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
 
 export const Header: React.FC = (): JSX.Element => {
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
-  const [headerTitle, setHeaderTitle] = useState("Popular Titles");
-
-  const getHeaderTitle = (pathname: string) => {
-    switch (pathname) {
+  const getHeaderTitle = () => {
+    switch (asPath) {
       case "/movies":
         return "Popular Movies";
         break;
@@ -25,20 +23,13 @@ export const Header: React.FC = (): JSX.Element => {
     }
   };
 
-  useEffect(() => {
-    setHeaderTitle(getHeaderTitle(pathname));
-  }, [pathname]);
-
   return (
-    <header data-test-id="header-test" className={styles.header}>
+    <header data-testid="header-test" className={styles.header}>
       <div className={styles.headerMain}>
         <div className={styles.headerMainContent}>
           <h1 className={styles.headerMainContentName}>DEMO Streaming</h1>
           <div className={styles.headerMainContentButtons}>
-            <TextButton
-              className="text-white text-[12px]  md:text-sm"
-              text="Log In"
-            />
+            <TextButton className="text-white text-[12px]  md:text-sm" text="Log In" />
             <Button
               className="text-white text-[12px]  md:text-sm p-[1px_5px_1px_2px]   md:p-[5px_25px_5px_10px] bg-gray"
               text="Start your free trial"
@@ -47,7 +38,9 @@ export const Header: React.FC = (): JSX.Element => {
         </div>
       </div>
       <div className={styles.headerTitle}>
-        <div className={styles.headerTitleContent}>{headerTitle}</div>
+        <div data-testid="header-title-id" className={styles.headerTitleContent}>
+          {getHeaderTitle()}
+        </div>
       </div>
     </header>
   );

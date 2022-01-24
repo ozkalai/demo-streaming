@@ -15,7 +15,7 @@ describe("Layout", () => {
         })}
       >
         <Layout />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
 
     const headerComponent = screen.getByText("DEMO Streaming");
@@ -33,7 +33,7 @@ describe("Layout", () => {
         })}
       >
         <Layout />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
 
     const footerComponent = screen.getByTestId("footer-test-id");

@@ -15,7 +15,7 @@ describe("Header", () => {
         })}
       >
         <Header />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
     const headerMainTitle = screen.getByText("DEMO Streaming");
 
@@ -32,7 +32,7 @@ describe("Header", () => {
         })}
       >
         <Header />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
     const textButton = screen.getByText("Log In");
 
@@ -49,7 +49,7 @@ describe("Header", () => {
         })}
       >
         <Header />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
     const button = screen.getByText("Start your free trial");
 
@@ -63,14 +63,14 @@ describe("Header", () => {
           query: {
             id: "1",
           },
-          pathname: "/movies",
+          asPath: "/movies",
         })}
       >
         <Header />
-      </RouterContext.Provider>
+      </RouterContext.Provider>,
     );
-    const headerTitleFromPathname = screen.getByText("Popular Movies");
+    const headerTitleFromPathname = screen.getByTestId("header-title-id");
 
-    expect(headerTitleFromPathname).toBeTruthy();
+    expect(headerTitleFromPathname).toContainHTML("Popular Movies");
   });
 });
