@@ -1,11 +1,11 @@
 .dropdown {
-  @apply w-full h-[37px] relative;
+  @apply w-full h-[37px] relative text-sm lg:text-lg;
 
   &Header {
     @apply p-2 flex justify-between items-center cursor-pointer shadow-xl;
 
     &Title {
-      @apply text-xs md:text-lg;
+      @apply text-xs md:text-sm;
     }
 
     &Icon {
@@ -21,7 +21,7 @@
     }
 
     &Item {
-      @apply h-[37px] flex items-center  hover:bg-blue hover:text-white;
+      @apply h-[37px] flex items-center  hover:bg-blue hover:text-white text-xs md:text-sm;
       button {
         @apply px-2;
       }
