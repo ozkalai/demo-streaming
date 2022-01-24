@@ -4,10 +4,7 @@ import { FaSortDown } from "react-icons/fa";
 import { IDropdownProps } from "@/interfaces/Dropdown";
 import styles from "./Dropdown.module.scss";
 
-export const Dropdown: React.FC<IDropdownProps> = ({
-  optionsList,
-}): JSX.Element => {
-  const [headerTitle, setHeaderTitle] = useState("Sort By");
+export const Dropdown: React.FC<IDropdownProps> = ({ optionsList, onChange, selected }): JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -17,23 +14,27 @@ export const Dropdown: React.FC<IDropdownProps> = ({
           setIsOpen(!isOpen);
         }}
         className={styles.dropdownHeader}
+        data-testid="dd-header"
       >
-        <div className={styles.dropdownHeaderTitle}>{headerTitle}</div>
-        <FaSortDown className={styles.dropdownHeaderIcon} />
+        <div className={styles.dropdownHeaderTitle}>
+          {optionsList.find((e) => {
+            return e.value === selected;
+          })?.label ?? "Sort By"}
+        </div>
+        <FaSortDown data-testid="icon" className={styles.dropdownHeaderIcon} />
       </div>
       {isOpen && (
         <div className={styles.dropdownList}>
           {optionsList.map((o, i) => (
-            <div className={styles.dropdownListItem} key={i + 1}>
+            <div className={styles.dropdownListItem} key={i}>
               <button
                 onClick={() => {
-                  setHeaderTitle(o.title);
+                  onChange(o.value);
                   setIsOpen(false);
-                  o.cb();
                 }}
                 className={styles.dropdownListItemButton}
               >
-                {o.title}
+                {o.label}
               </button>
             </div>
           ))}

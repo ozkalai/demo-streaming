@@ -6,60 +6,41 @@ const handleClick = jest.fn();
 
 const optionList = [
   {
-    title: "Sort by year in descending order.",
-    cb: () => {
-      handleClick();
-    },
+    label: "Sort by year in descending order.",
+    value: "year-desc",
   },
   {
-    title: "Sort by year in ascending order.",
-    cb: () => {
-      handleClick();
-    },
+    label: "Sort by year in ascending order.",
+    value: "year-asc",
   },
 ];
 
 describe("Dropdown", () => {
   test("it render header ", () => {
-    render(<Dropdown optionsList={optionList} />);
+    render(<Dropdown selected="Sort By" onChange={() => {}} optionsList={optionList} />);
 
     const dropdownHeader = screen.getByText("Sort By");
 
     expect(dropdownHeader).toBeInTheDocument();
   });
 
-  test("it render list when click header ", () => {
-    render(<Dropdown optionsList={optionList} />);
+  test("it render icon ", () => {
+    render(<Dropdown selected="Sort By" onChange={() => {}} optionsList={optionList} />);
 
-    const dropdownHeader = screen.getByText("Sort By");
+    const icon = screen.getByTestId("icon");
 
-    fireEvent.click(dropdownHeader);
-
-    const dropdownListItem1 = screen.getByText(
-      "Sort by year in descending order."
-    );
-
-    const dropdownListItem2 = screen.getByText(
-      "Sort by year in ascending order."
-    );
-
-    expect(dropdownListItem1).toBeInTheDocument();
-    expect(dropdownListItem2).toBeInTheDocument();
+    expect(icon).toBeInTheDocument();
   });
 
-  test("it render list when click header ", () => {
-    render(<Dropdown optionsList={optionList} />);
+  test("it render button ", () => {
+    render(<Dropdown selected="Sort By" onChange={() => {}} optionsList={optionList} />);
 
-    const dropdownHeader = screen.getByText("Sort By");
+    const headerTitle = screen.getByTestId("dd-header");
 
-    fireEvent.click(dropdownHeader);
+    fireEvent.click(headerTitle);
 
-    const dropdownListItem1 = screen.getByText(
-      "Sort by year in descending order."
-    );
+    const listItem = screen.getByText("Sort by year in descending order.");
 
-    fireEvent.click(dropdownListItem1);
-
-    expect(handleClick).toHaveBeenCalled();
+    expect(listItem).toBeInTheDocument();
   });
 });

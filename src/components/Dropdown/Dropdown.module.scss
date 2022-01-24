@@ -5,6 +5,7 @@
     @apply p-2 flex justify-between items-center cursor-pointer shadow-xl;
 
     &Title {
+      @apply text-xs md:text-lg;
     }
 
     &Icon {
