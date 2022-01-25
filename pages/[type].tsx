@@ -1,50 +1,34 @@
 import type { GetServerSideProps, NextPage } from "next";
-import { useState } from "react";
-import { useQuery } from "react-query";
+import { useMemo, useState } from "react";
 
 import { Content, Search, Dropdown, ProgramList } from "@/components";
-import { IProgramData } from "@/interfaces/ProgramData";
 import { optionList } from "@/constants/optionList";
 import styles from "@/styles/pages/Type.module.scss";
+import dataFromJson from "../public/sample.json";
+import { IPageProp } from "@/interfaces/Page";
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const queryType = ctx.query.type;
-  return {
-    props: {
-      type: queryType === "movies" ? "movie" : queryType,
-    },
-    notFound: queryType !== "series" && queryType !== "movies",
-  };
-};
-
-const Series: NextPage<{ type: "movie" | "series" }> = ({ type }) => {
+const Series: NextPage<IPageProp> = ({ type, data }) => {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState("title-desc");
 
-  const { isLoading, error, data } = useQuery(["series-data", sort, query, type], async () => {
-    const raw = await fetch("./sample.json");
-    const json = await raw.json();
-    const filtered = json.entries.filter(
-      (e: IProgramData) =>
-        e.programType === type &&
-        e.releaseYear >= 2010 &&
-        e.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()),
-    );
-    const sorted = filtered.sort((a: IProgramData, b: IProgramData) => {
-      switch (sort) {
-        case "title-asc":
-          return b.title.localeCompare(a.title);
-        case "year-asc":
-          return a.releaseYear - b.releaseYear;
-        case "year-desc":
-          return b.releaseYear - a.releaseYear;
-        case "title-desc":
-        default:
-          return a.title.localeCompare(b.title);
-      }
-    });
-    return sorted.slice(0, 21);
-  });
+  const filtered = useMemo(() => {
+    return data
+      .sort((a, b) => {
+        switch (sort) {
+          case "title-asc":
+            return b.title.localeCompare(a.title);
+          case "year-asc":
+            return a.releaseYear - b.releaseYear;
+          case "year-desc":
+            return b.releaseYear - a.releaseYear;
+          case "title-desc":
+          default:
+            return a.title.localeCompare(b.title);
+        }
+      })
+      .filter((p) => p.title.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+      .slice(0, 21);
+  }, [sort, query, data]);
 
   return (
     <Content>
@@ -66,11 +50,25 @@ const Series: NextPage<{ type: "movie" | "series" }> = ({ type }) => {
           />
         </div>
       </div>
-
-      {error ? "Oops, something went wrong" : ""}
-      {isLoading ? "Loading" : <ProgramList data={data ?? []} />}
+      {filtered ? <ProgramList data={filtered} /> : "Loading..."}
     </Content>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const queryType = ctx.query.type;
+
+  const type = queryType === "movies" ? "movie" : queryType;
+
+  const data = dataFromJson.entries.filter((p) => p.programType === type && p.releaseYear >= 2010);
+
+  return {
+    props: {
+      type,
+      data,
+    },
+    notFound: queryType !== "series" && queryType !== "movies",
+  };
 };
 
 export default Series;
