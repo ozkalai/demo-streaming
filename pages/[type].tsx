@@ -60,12 +60,14 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
   const type = queryType === "movies" ? "movie" : queryType;
 
-  const data = dataFromJson.entries.filter((p) => p.programType === type && p.releaseYear >= 2010);
+  const data = dataFromJson.entries.map((p, idx) => ({ ...p, id: idx }));
+
+  const entries = data.filter((p) => p.programType === type && p.releaseYear >= 2010);
 
   return {
     props: {
       type,
-      data,
+      data: entries,
     },
     notFound: queryType !== "series" && queryType !== "movies",
   };
