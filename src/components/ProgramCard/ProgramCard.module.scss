@@ -1,5 +1,5 @@
 .programCard {
-  @apply w-full flex flex-col gap-2;
+  @apply w-full flex flex-col gap-2 cursor-pointer;
 
   &Image {
     @apply relative;
