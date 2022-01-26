@@ -8,6 +8,7 @@ export interface IProgramData {
     "Poster Art": IPosterArt;
   };
   releaseYear: number;
+  id: number;
 }
 
 export interface IPosterArt {
